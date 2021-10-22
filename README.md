@@ -1,4 +1,24 @@
-Cunt uses the Proof of Space and blah blah blah
-You've heard it multiple times. Enjoy you cunts <3 
-I know theres gonna be at least 1 person thats gonna be offended... and all i gotta say is. ISSA JOKE. 
-Have a good one! Hope you all farm all the VAG!
+Cunt is a cryptocurrency forked from Chia and uses the Proof of Space and Time consensus algorithm
+
+Discord Channel: https://discord.gg/xguteVCYHh
+
+Website: https://cuntcoin.net (coming soon)
+
+Introducer: dns-introducer.cuntcoin.net:18690
+
+Changelog:
+v1.0.0 - Initial Release
+
+v1.1.0 - Prefarm removed
+       - Difficulty fixed
+
+v1.1.16 - Restarted chain because of unstable Difficulty
+
+v2.0.0 - Aligned with Chia 1.2.0
+       - Test NFT Plots and Pooling
+
+v2.0.1 - Fix "exchange" bug
+
+v2.0.2 - Image rebrand
+
+v2.1.0 - added time consuming in the GUI

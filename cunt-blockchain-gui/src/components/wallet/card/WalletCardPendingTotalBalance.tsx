@@ -3,7 +3,7 @@ import { Trans } from '@lingui/macro';
 import FarmCard from '../../farm/card/FarmCard';
 import useWallet from '../../../hooks/useWallet';
 import useCurrencyCode from '../../../hooks/useCurrencyCode';
-import { mojo_to_cunt_string } from '../../../util/cunt';
+import { byte_to_cunt_string } from '../../../util/cunt';
 
 type Props = {
   wallet_id: number;
@@ -16,7 +16,7 @@ export default function WalletCardPendingTotalBalance(props: Props) {
   const currencyCode = useCurrencyCode();
 
   const balance = wallet?.wallet_balance?.confirmed_wallet_balance;
-  const balance_pending = wallet?.wallet_balance?.pending_balance;
+  const balance_pending = wallet?.wallet_balance?.balance_pending;
 
   const value = balance + balance_pending;
 
@@ -33,7 +33,7 @@ export default function WalletCardPendingTotalBalance(props: Props) {
       }
       value={
         <>
-          {mojo_to_cunt_string(value)} {currencyCode}
+          {byte_to_cunt_string(value)} {currencyCode}
         </>
       }
     />

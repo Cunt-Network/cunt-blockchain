@@ -1,6 +1,6 @@
 enum Unit {
   CUNT = 'CUNT',
-  MOJO = 'MOJO',
+  BYTE = 'BYTE',
   COLOURED_COIN = 'COLOUREDCOIN',
 }
 

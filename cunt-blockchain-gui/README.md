@@ -1,5 +1,5 @@
 # cunt-blockchain
-![Alt text](https://www.cunt.net/img/cunt_logo.svg)
+![Alt text](https://www.cuntcoin.net/img/cunt_logo.svg)
 
 ![GitHub contributors](https://img.shields.io/github/contributors/Cunt-Network/cunt-blockchain?logo=GitHub)
 

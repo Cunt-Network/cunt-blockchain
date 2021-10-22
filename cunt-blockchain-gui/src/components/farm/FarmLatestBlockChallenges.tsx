@@ -65,12 +65,12 @@ export default function FarmLatestBlockChallenges() {
           *Want to explore Cunt’s blocks further? Check out{' '}
           <Link
             color="primary"
-            href="https://cunt.posat.io/"
+            href="https://alltheblocks.net/cunt"
             target="_blank"
           >
             Cunt Explorer
           </Link>{' '}
-          built by that one smart guy on discord.
+          built by an open source developer.
         </Trans>
       </Typography>
     </Card>

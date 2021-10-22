@@ -13,38 +13,38 @@ const cols = [
     minWidth: '200px',
     field: 'challenge_hash',
     tooltip: true,
-    title: <Trans>Challenge</Trans>,
+    title: <Trans>Poons Slayed</Trans>,
   },
   {
     field(row: Row) {
       return `${row.passed_filter} / ${row.total_plots}`;
     },
-    title: <Trans>Plots Passed Filter</Trans>,
+    title: <Trans>Head Given</Trans>,
   },
   {
     field: 'proofs',
-    title: <Trans>Proofs Found</Trans>,
+    title: <Trans>Cums</Trans>,
   },
   {
-  field: 'timeconsuming',
-  title: <Trans>Time Consuming(ms)</Trans>,
+    field: 'timeconsuming',
+    title: <Trans>Strokes</Trans>,
   },
   {
     field(row: Row) {
       return moment(row.timestamp * 1000).format('MMM D, h:mm:ss A');
     },
-    title: <Trans>Date</Trans>,
+    title: <Trans>Consent Given</Trans>,
   },
 ];
 
 export default function FarmLastAttemptedProof() {
   const { size } = usePlots();
 
-  const lastAttemtedProof = useSelector(
+  const lastAttemptedProof = useSelector(
     (state: RootState) => state.farming_state.farmer.last_farming_info ?? [],
   );
-  const reducedLastAttemtedProof = lastAttemtedProof.slice(0, 5);
-  const isEmpty = !reducedLastAttemtedProof.length;
+  const reducedLastAttemptedProof = lastAttemptedProof.slice(0, 5).sort((a,b) => a.timestamp-b.timestamp);
+  const isEmpty = !reducedLastAttemptedProof.length;
 
   return (
     <Card
@@ -65,7 +65,7 @@ export default function FarmLastAttemptedProof() {
     >
       <Table
         cols={cols}
-        rows={reducedLastAttemtedProof}
+        rows={reducedLastAttemptedProof}
         caption={
           isEmpty && (
             <Typography>
