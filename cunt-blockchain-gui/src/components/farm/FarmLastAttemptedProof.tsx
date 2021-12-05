@@ -23,11 +23,13 @@ const cols = [
   },
   {
     field: 'proofs',
-    title: <Trans>Cums</Trans>,
+    title: <Trans>Ejaculations</Trans>,
   },
   {
-    field: 'timeconsuming',
-    title: <Trans>Strokes</Trans>,
+    field(row: Row) {
+      return `${row.timeconsuming} ms`
+    },
+    title: <Trans>How Long You Lasted</Trans>,
   },
   {
     field(row: Row) {

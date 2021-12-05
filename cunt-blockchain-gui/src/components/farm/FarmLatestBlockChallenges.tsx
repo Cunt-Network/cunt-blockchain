@@ -65,7 +65,7 @@ export default function FarmLatestBlockChallenges() {
           *Want to explore Cunt’s blocks further? Check out{' '}
           <Link
             color="primary"
-            href="https://alltheblocks.net/cunt"
+            href="https://www.alltheblocks.net/cunt"
             target="_blank"
           >
             Cunt Explorer

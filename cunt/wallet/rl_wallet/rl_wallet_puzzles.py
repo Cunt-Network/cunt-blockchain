@@ -7,7 +7,7 @@ from cunt.types.blockchain_format.program import Program
 from cunt.types.blockchain_format.sized_bytes import bytes32
 from cunt.types.condition_opcodes import ConditionOpcode
 from cunt.util.ints import uint64
-from cunt.wallet.chialisp import sexp
+from cunt.wallet.cuntlisp import sexp
 from cunt.wallet.puzzles.load_clvm import load_clvm
 
 RATE_LIMITED_MODE = 1

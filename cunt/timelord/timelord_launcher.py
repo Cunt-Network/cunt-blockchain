@@ -8,9 +8,11 @@ from typing import Dict, List
 
 import pkg_resources
 
+from cunt.types.peer_info import PeerInfo
 from cunt.util.cunt_logging import initialize_logging
 from cunt.util.config import load_config
 from cunt.util.default_root import DEFAULT_ROOT_PATH
+from cunt.util.ints import uint16
 from cunt.util.setproctitle import setproctitle
 
 active_processes: List = []
@@ -49,7 +51,11 @@ async def spawn_process(host: str, port: int, counter: int):
         try:
             dirname = path_to_vdf_client.parent
             basename = path_to_vdf_client.name
-            resolved = socket.gethostbyname(host)
+            check_addr = PeerInfo(host, uint16(port))
+            if check_addr.is_valid():
+                resolved = host
+            else:
+                resolved = socket.gethostbyname(host)
             proc = await asyncio.create_subprocess_shell(
                 f"{basename} {resolved} {port} {counter}",
                 stdout=asyncio.subprocess.PIPE,

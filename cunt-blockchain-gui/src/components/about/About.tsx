@@ -70,7 +70,7 @@ const Spacer = styled.div`
   margin-bottom: 1rem;
 `;
 
-const url = 'https://cuntcoin.net';
+const url = 'https://cunt.net';
 
 type Props = {
   version: string;

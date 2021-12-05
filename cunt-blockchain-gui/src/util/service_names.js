@@ -4,7 +4,7 @@ export const service_farmer = 'cunt_farmer';
 export const service_harvester = 'cunt_harvester';
 export const service_simulator = 'cunt_full_node_simulator';
 export const service_daemon = 'daemon';
-export const service_plotter = 'cunt plots create';
+export const service_plotter = 'cunt_plotter';
 
 // Corresponds with outbound_message.py NodeTypes
 export const service_connection_types = {

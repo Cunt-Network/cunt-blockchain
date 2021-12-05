@@ -1,6 +1,6 @@
 import pytest
 
-from cunt.wallet.chialisp import (
+from cunt.wallet.cuntlisp import (
     apply,
     args,
     cons,
@@ -17,7 +17,7 @@ from cunt.wallet.chialisp import (
 )
 
 
-class TestChialisp:
+class TestCuntlisp:
     def test_sexp(self):
         assert sexp() == "()"
         assert sexp(1) == "(1)"

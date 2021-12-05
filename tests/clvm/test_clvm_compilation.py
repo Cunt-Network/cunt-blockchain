@@ -9,7 +9,7 @@ wallet_program_files = set(
     [
         "cunt/wallet/puzzles/calculate_synthetic_public_key.clvm",
         "cunt/wallet/puzzles/cc.clvm",
-        "cunt/wallet/puzzles/chialisp_deserialisation.clvm",
+        "cunt/wallet/puzzles/cuntlisp_deserialisation.clvm",
         "cunt/wallet/puzzles/rom_bootstrap_generator.clvm",
         "cunt/wallet/puzzles/generator_for_single_coin.clvm",
         "cunt/wallet/puzzles/genesis-by-coin-id-with-0.clvm",

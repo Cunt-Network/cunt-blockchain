@@ -1,8 +1,6 @@
-[submodule "cunt-blockchain-gui"]
-	path = cunt-blockchain-gui
-	url = https://github.com/Cunt-Network/cunt-blockchain-gui.git
-	branch = pools
 [submodule "mozilla-ca"]
 	path = mozilla-ca
-	url = https://github.com/Cunt-Network/mozilla-ca.git
-        branch = main
+	url = https://github.com/Chia-Network/mozilla-ca/
+[submodule "cunt-blockchain-gui"]
+	path = cunt-blockchain-gui
+	url = https://github.com/dominick01234/cunt-blockchain-gui

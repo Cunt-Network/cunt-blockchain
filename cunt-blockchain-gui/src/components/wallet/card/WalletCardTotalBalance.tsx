@@ -5,7 +5,7 @@ import WalletGraph from '../WalletGraph';
 import FarmCard from '../../farm/card/FarmCard';
 import useWallet from '../../../hooks/useWallet';
 import useCurrencyCode from '../../../hooks/useCurrencyCode';
-import { byte_to_cunt_string } from '../../../util/cunt';
+import { mojo_to_cunt_string } from '../../../util/cunt';
 
 const StyledGraphContainer = styled.div`
   margin-left: -1rem;
@@ -39,7 +39,7 @@ export default function WalletCardTotalBalance(props: Props) {
       }
       value={
         <>
-          {byte_to_cunt_string(value)} {currencyCode}
+          {mojo_to_cunt_string(value)} {currencyCode}
         </>
       }
       description={
