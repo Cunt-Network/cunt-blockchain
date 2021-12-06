@@ -48,7 +48,7 @@ dev_dependencies = [
 kwargs = dict(
     name="cunt-blockchain",
     description="Cunt blockchain full node, farmer, timelord, and wallet.",
-    url="https://cunt.com/",
+    url="https://cuntcoin.net/",
     license="Apache License",
     python_requires=">=3.7, <4",
     keywords="cunt blockchain node",
