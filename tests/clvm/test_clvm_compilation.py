@@ -8,12 +8,10 @@ from cunt.types.blockchain_format.program import Program, SerializedProgram
 wallet_program_files = set(
     [
         "cunt/wallet/puzzles/calculate_synthetic_public_key.clvm",
-        "cunt/wallet/puzzles/cc.clvm",
+        "cunt/wallet/puzzles/cat.clvm",
         "cunt/wallet/puzzles/cuntlisp_deserialisation.clvm",
         "cunt/wallet/puzzles/rom_bootstrap_generator.clvm",
         "cunt/wallet/puzzles/generator_for_single_coin.clvm",
-        "cunt/wallet/puzzles/genesis-by-coin-id-with-0.clvm",
-        "cunt/wallet/puzzles/genesis-by-puzzle-hash-with-0.clvm",
         "cunt/wallet/puzzles/lock.inner.puzzle.clvm",
         "cunt/wallet/puzzles/p2_conditions.clvm",
         "cunt/wallet/puzzles/p2_delegated_conditions.clvm",
@@ -37,6 +35,14 @@ wallet_program_files = set(
         "cunt/wallet/puzzles/pool_member_innerpuz.clvm",
         "cunt/wallet/puzzles/singleton_launcher.clvm",
         "cunt/wallet/puzzles/p2_singleton_or_delayed_puzhash.clvm",
+        "cunt/wallet/puzzles/genesis_by_puzzle_hash.clvm",
+        "cunt/wallet/puzzles/everything_with_signature.clvm",
+        "cunt/wallet/puzzles/delegated_tail.clvm",
+        "cunt/wallet/puzzles/settlement_payments.clvm",
+        "cunt/wallet/puzzles/genesis_by_coin_id.clvm",
+        "cunt/wallet/puzzles/genesis-by-puzzle-hash-with-0.clvm",
+        "cunt/wallet/puzzles/delegated_genesis_checker.clvm",
+        "cunt/wallet/puzzles/genesis-by-coin-id-with-0.clvm",
     ]
 )
 

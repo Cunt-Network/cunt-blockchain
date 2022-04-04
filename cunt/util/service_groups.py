@@ -10,10 +10,12 @@ SERVICES_FOR_GROUP = {
     "timelord": "cunt_timelord_launcher cunt_timelord cunt_full_node".split(),
     "timelord-only": "cunt_timelord".split(),
     "timelord-launcher-only": "cunt_timelord_launcher".split(),
-    "wallet": "cunt_wallet cunt_full_node".split(),
-    "wallet-only": "cunt_wallet".split(),
+    "wallet": "cunt_wallet".split(),
     "introducer": "cunt_introducer".split(),
     "simulator": "cunt_full_node_simulator".split(),
+    "crawler": "cunt_crawler".split(),
+    "seeder": "cunt_crawler cunt_seeder".split(),
+    "seeder-only": "cunt_seeder".split(),
 }
 
 

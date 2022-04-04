@@ -1,8 +1,9 @@
 from dataclasses import dataclass
 from typing import Any, List
 
+from clvm.casts import int_to_bytes
+
 from cunt.types.blockchain_format.sized_bytes import bytes32
-from cunt.util.clvm import int_to_bytes
 from cunt.util.hash import std_hash
 from cunt.util.ints import uint64
 from cunt.util.streamable import Streamable, streamable

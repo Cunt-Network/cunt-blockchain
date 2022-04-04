@@ -1,9 +1,9 @@
 import dataclasses
+import logging
 
 from cunt.types.blockchain_format.sized_bytes import bytes32
 from cunt.util.byte_types import hexstr_to_bytes
 from cunt.util.ints import uint8, uint32, uint64, uint128
-import logging
 
 log = logging.getLogger(__name__)
 

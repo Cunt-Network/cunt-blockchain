@@ -8,9 +8,9 @@ from cunt.types.blockchain_format.program import Program
 from cunt.types.blockchain_format.sized_bytes import bytes32
 from cunt.types.blockchain_format.coin import Coin
 from cunt.types.coin_spend import CoinSpend
+from cunt.types.condition_opcodes import ConditionOpcode
 from cunt.types.spend_bundle import SpendBundle
 from cunt.util.errors import Err
-from cunt.util.condition_tools import ConditionOpcode
 from cunt.util.ints import uint64
 from cunt.consensus.default_constants import DEFAULT_CONSTANTS
 from cunt.wallet.lineage_proof import LineageProof

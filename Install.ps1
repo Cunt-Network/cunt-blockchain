@@ -41,6 +41,14 @@ if ([version]$pythonVersion -lt [version]"3.7.0")
 }
 Write-Output "Python version is:" $pythonVersion
 
+$openSSLVersionStr = (py -c 'import ssl; print(ssl.OPENSSL_VERSION)')
+$openSSLVersion = (py -c 'import ssl; print(ssl.OPENSSL_VERSION_NUMBER)')
+if ($openSSLVersion -lt 269488367)
+{
+    Write-Output "Found Python with OpenSSL version:" $openSSLVersionStr
+    Write-Output "Anything before 1.1.1n is vulnerable to CVE-2022-0778."
+}
+
 py -m venv venv
 
 venv\scripts\python -m pip install --upgrade pip setuptools wheel
@@ -49,8 +57,8 @@ venv\scripts\pip install --editable . --extra-index-url https://pypi.chia.net/si
 
 Write-Output ""
 Write-Output "Cunt blockchain .\Install.ps1 complete."
-Write-Output "For assistance join us on Keybase in the #support chat channel:"
-Write-Output "https://keybase.io/team/cunt_network.public"
+Write-Output "For assistance join us on Discord in the #support chat channel:"
+Write-Output "https://discord.gg/yEWaF6CQcA"
 Write-Output ""
 Write-Output "Try the Quick Start Guide to running cunt-blockchain:"
 Write-Output "https://github.com/Cunt-Network/cunt-blockchain/wiki/Quick-Start-Guide"

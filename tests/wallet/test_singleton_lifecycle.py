@@ -10,8 +10,8 @@ from cunt.types.announcement import Announcement
 from cunt.types.blockchain_format.coin import Coin
 from cunt.types.blockchain_format.sized_bytes import bytes32
 from cunt.types.coin_spend import CoinSpend
+from cunt.types.condition_opcodes import ConditionOpcode
 from cunt.types.spend_bundle import SpendBundle
-from cunt.util.condition_tools import ConditionOpcode
 
 from cunt.util.ints import uint64
 from cunt.wallet.puzzles.load_clvm import load_clvm

@@ -2,12 +2,13 @@ from setuptools import setup
 
 dependencies = [
     "multidict==5.1.0",  # Avoid 5.2.0 due to Avast
-    "blspy==1.0.6",  # Signature library
-    "chiavdf==1.0.3",  # timelord and vdf verification
-    "chiabip158==1.0",  # bip158-style wallet filters
-    "chiapos==1.0.6",  # proof of space
+    "aiofiles==0.7.0",  # Async IO for files
+    "blspy==1.0.9",  # Signature library
+    "chiavdf==1.0.5",  # timelord and vdf verification
+    "chiabip158==1.1",  # bip158-style wallet filters
+    "chiapos==1.0.9",  # proof of space
     "clvm==0.9.7",
-    "clvm_rs==0.1.15",
+    "clvm_rs==0.1.19",
     "clvm_tools==0.4.3",
     "aiohttp==3.7.4",  # HTTP server for full node rpc
     "aiosqlite==0.17.0",  # asyncio wrapper for sqlite, to store blocks
@@ -17,6 +18,7 @@ dependencies = [
     "concurrent-log-handler==0.9.19",  # Concurrently log and rotate logs
     "cryptography==3.4.7",  # Python cryptography library for TLS - keyring conflict
     "fasteners==0.16.3",  # For interprocess file locking
+    "filelock==3.4.2", # For reading and writing config multiprocess and multithread safely (non-reentrant locks)
     "keyring==23.0.1",  # Store keys in MacOS Keychain, Windows Credential Locker
     "keyrings.cryptfile==1.3.4",  # Secure storage for keys on Linux (Will be replaced)
     #  "keyrings.cryptfile==1.3.8",  # Secure storage for keys on Linux (Will be replaced)
@@ -25,9 +27,15 @@ dependencies = [
     "setproctitle==1.2.2",  # Gives the cunt processes readable names
     "sortedcontainers==2.4.0",  # For maintaining sorted mempools
     "websockets==8.1.0",  # For use in wallet RPC and electron UI
+    # TODO: when moving to click 8 remove the pinning of black noted below
     "click==7.1.2",  # For the CLI
     "dnspythonchia==2.2.0",  # Query DNS seeds
     "watchdog==2.1.6",  # Filesystem event watching - watches keyring.yaml
+    "dnslib==0.9.17",  # dns lib
+    "typing-extensions==4.0.1",  # typing backports like Protocol and TypedDict
+    "zstd==1.5.0.4",
+    "packaging==21.0",
+    "wget==3.2", # Only for downloading peer node list
 ]
 
 upnp_dependencies = [
@@ -35,25 +43,36 @@ upnp_dependencies = [
 ]
 
 dev_dependencies = [
+    "build",
+    "pre-commit",
     "pytest",
-    "pytest-asyncio",
+    "pytest-asyncio>=0.18.1", # require attribute 'fixture'
+    "pytest-monitor; sys_platform == 'linux'",
+    "pytest-xdist",
+    "twine",
+    "isort",
     "flake8",
     "mypy",
-    "black",
+    # TODO: black 22.1.0 requires click>=8, remove this pin after updating to click 8
+    "black==21.12b0",
     "aiohttp_cors",  # For blackd
     "ipython",  # For asyncio debugging
+    "types-aiofiles",
+    "types-click",
+    "types-cryptography",
+    "types-pkg_resources",
+    "types-pyyaml",
     "types-setuptools",
 ]
 
 kwargs = dict(
     name="cunt-blockchain",
     description="Cunt blockchain full node, farmer, timelord, and wallet.",
-    url="https://cuntcoin.net/",
+    url="https://cuntnetwork.org/",
     license="Apache License",
     python_requires=">=3.7, <4",
     keywords="cunt blockchain node",
     install_requires=dependencies,
-    setup_requires=["setuptools_scm"],
     extras_require=dict(
         uvloop=["uvloop"],
         dev=dev_dependencies,
@@ -76,6 +95,7 @@ kwargs = dict(
         "cunt.pools",
         "cunt.protocols",
         "cunt.rpc",
+        "cunt.seeder",
         "cunt.server",
         "cunt.simulator",
         "cunt.types.blockchain_format",
@@ -84,7 +104,7 @@ kwargs = dict(
         "cunt.wallet",
         "cunt.wallet.puzzles",
         "cunt.wallet.rl_wallet",
-        "cunt.wallet.cc_wallet",
+        "cunt.wallet.cat_wallet",
         "cunt.wallet.did_wallet",
         "cunt.wallet.settings",
         "cunt.wallet.trading",
@@ -100,6 +120,8 @@ kwargs = dict(
             "cunt_harvester = cunt.server.start_harvester:main",
             "cunt_farmer = cunt.server.start_farmer:main",
             "cunt_introducer = cunt.server.start_introducer:main",
+            "cunt_crawler = cunt.seeder.start_crawler:main",
+            "cunt_seeder = cunt.seeder.dns_server:main",
             "cunt_timelord = cunt.server.start_timelord:main",
             "cunt_timelord_launcher = cunt.timelord.timelord_launcher:main",
             "cunt_full_node_simulator = cunt.simulator.start_simulator:main",
@@ -110,9 +132,8 @@ kwargs = dict(
         "": ["*.clvm", "*.clvm.hex", "*.clib", "*.clinc", "*.clsp", "py.typed"],
         "cunt.util": ["initial-*.yaml", "english.txt"],
         "cunt.ssl": ["cunt_ca.crt", "cunt_ca.key", "dst_root_ca.pem"],
-        "mozilla-ca": ["vagert.pem"],
+        "mozilla-ca": ["cacert.pem"],
     },
-    use_scm_version={"fallback_version": "unknown-no-.git-directory"},
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     zip_safe=False,
